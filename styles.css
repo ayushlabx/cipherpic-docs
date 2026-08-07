@@ -1,0 +1,425 @@
+/* ==========================================================================
+   privacy.css
+   Clean, minimal styling for CipherPic's Privacy Policy page.
+   White background, black text, no gradients, no animation.
+   ========================================================================== */
+
+:root {
+  --text: #111111;
+  --text-muted: #444444;
+  --border: #dddddd;
+  --link: #1a56db;
+  --link-visited: #1a56db;
+  --bg: #ffffff;
+  --max-width: 850px;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Layout ------------------------------------------------------------- */
+
+.page {
+  display: flex;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  align-items: flex-start;
+  gap: 48px;
+  padding: 0 24px;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+  padding-bottom: 96px;
+}
+
+/* Site navigation --------------------------------------------------------- */
+
+.sitenav {
+  border-bottom: 1px solid var(--border);
+}
+
+.sitenav-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.sitenav-brand {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--text);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+
+.sitenav-links {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sitenav-links a {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.sitenav-links a:hover {
+  color: var(--link);
+  text-decoration: underline;
+}
+
+.sitenav-links a[aria-current="page"] {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* Header --------------------------------------------------------------- */
+
+.doc-header {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 56px 24px 32px;
+  border-bottom: 1px solid var(--border);
+}
+
+.doc-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 12px;
+  letter-spacing: -0.01em;
+}
+
+.doc-dates {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.doc-dates span {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.doc-intro {
+  margin-top: 20px;
+  font-size: 1.02rem;
+  color: var(--text);
+  max-width: 68ch;
+}
+
+/* Table of contents ------------------------------------------------------ */
+
+.toc {
+  width: 230px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 32px;
+  align-self: flex-start;
+  max-height: calc(100vh - 64px);
+  overflow-y: auto;
+  padding: 32px 0;
+}
+
+.toc h2 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin: 0 0 14px;
+  font-weight: 600;
+}
+
+.toc ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: toc-counter;
+}
+
+.toc li {
+  margin: 0 0 8px;
+}
+
+.toc a {
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: var(--link);
+  line-height: 1.4;
+  display: block;
+}
+
+.toc a:hover,
+.toc a:focus {
+  text-decoration: underline;
+}
+
+/* Sections ---------------------------------------------------------------- */
+
+section.policy-section {
+  padding-top: 40px;
+  margin-top: 8px;
+  border-top: 1px solid var(--border);
+  scroll-margin-top: 24px;
+}
+
+section.policy-section:first-of-type {
+  border-top: none;
+}
+
+.policy-section h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0 0 16px;
+  letter-spacing: -0.005em;
+}
+
+.policy-section h3 {
+  font-size: 1.02rem;
+  font-weight: 600;
+  margin: 24px 0 8px;
+}
+
+.policy-section p {
+  margin: 0 0 14px;
+  color: var(--text);
+}
+
+.policy-section ul,
+.policy-section ol.plain {
+  margin: 0 0 14px;
+  padding-left: 22px;
+}
+
+.policy-section li {
+  margin-bottom: 6px;
+}
+
+.policy-section a {
+  color: var(--link);
+  text-decoration: underline;
+}
+
+.policy-section a:hover {
+  text-decoration: none;
+}
+
+.note {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  border-left: 2px solid var(--border);
+  padding-left: 14px;
+  margin: 16px 0;
+}
+
+/* Footer -------------------------------------------------------------- */
+
+.doc-footer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 32px 24px 64px;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* Back to top ----------------------------------------------------------- */
+
+.back-to-top {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 0.85rem;
+}
+
+/* Responsive ------------------------------------------------------------- */
+
+@media (max-width: 780px) {
+  .page {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .toc {
+    position: static;
+    width: 100%;
+    max-height: none;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 16px;
+  }
+}
+
+/* Home page --------------------------------------------------------------- */
+
+.hero {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 64px 24px 48px;
+}
+
+.hero h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0 0 16px;
+}
+
+.hero p.lede {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 62ch;
+  margin: 0 0 28px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 0.92rem;
+  text-decoration: none;
+  border: 1px solid var(--text);
+  color: var(--text);
+}
+
+.btn:hover {
+  background: var(--text);
+  color: var(--bg);
+}
+
+.btn.btn-quiet {
+  border-color: var(--border);
+  color: var(--text-muted);
+}
+
+.btn.btn-quiet:hover {
+  background: transparent;
+  color: var(--link);
+  border-color: var(--link);
+}
+
+.home-section {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 40px 24px;
+  border-top: 1px solid var(--border);
+}
+
+.home-section h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0 0 20px;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px 32px;
+}
+
+.feature-item h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 6px;
+}
+
+.feature-item p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.link-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.link-card {
+  display: block;
+  border: 1px solid var(--border);
+  padding: 18px 20px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.link-card:hover {
+  border-color: var(--text);
+}
+
+.link-card h3 {
+  margin: 0 0 6px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.link-card p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 640px) {
+  .feature-grid,
+  .link-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Print --------------------------------------------------------------- */
+
+@media print {
+  .toc {
+    display: none;
+  }
+
+  .page {
+    display: block;
+    max-width: 100%;
+  }
+
+  a {
+    color: var(--text) !important;
+    text-decoration: none !important;
+  }
+
+  section.policy-section {
+    break-inside: avoid-page;
+  }
+
+  .back-to-top {
+    display: none;
+  }
+}

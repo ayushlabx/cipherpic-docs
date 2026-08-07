@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Help Center — CipherPic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* Page-specific additions for the FAQ layout — kept consistent with
+     privacy.css: no color, no animation, same type scale and spacing. */
+
+  .policy-section p.section-intro {
+    color: var(--text-muted);
+    margin-bottom: 24px;
+  }
+
+  details.faq {
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+  }
+
+  details.faq:first-of-type {
+    padding-top: 0;
+  }
+
+  details.faq summary {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    list-style: none;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+
+  details.faq summary::-webkit-details-marker {
+    display: none;
+  }
+
+  details.faq summary::after {
+    content: "+";
+    margin-left: auto;
+    font-weight: 400;
+    color: var(--text-muted);
+  }
+
+  details.faq[open] summary::after {
+    content: "−";
+  }
+
+  details.faq .faq-body {
+    margin-top: 10px;
+    padding-left: 0;
+    color: var(--text);
+  }
+
+  details.faq .faq-body p {
+    margin: 0 0 10px;
+  }
+
+  details.faq .faq-body ul {
+    margin: 0 0 10px;
+    padding-left: 20px;
+  }
+
+  .icon {
+    flex-shrink: 0;
+  }
+
+  .contact-box {
+    border: 1px solid var(--border);
+    padding: 20px 24px;
+    margin-top: 8px;
+  }
+
+  .contact-box p {
+    margin: 0 0 8px;
+  }
+
+  .contact-box p:last-child {
+    margin-bottom: 0;
+  }
+</style>
+</head>
+<body>
+<nav class="sitenav" aria-label="Site">
+  <div class="sitenav-inner">
+    <a class="sitenav-brand" href="index.html">CipherPic</a>
+    <ul class="sitenav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="help.html" aria-current="page">Help</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="terms.html">Terms</a></li>
+      <li><a href="sitemap.html">Index</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="doc-header">
+  <h1>Help Center</h1>
+  <p class="doc-dates">
+    <span>Last Updated: August 2026</span>
+  </p>
+  <p class="doc-intro">
+    Answers to common questions about using CipherPic. If you can't find what
+    you're looking for, our support team is happy to help — see
+    <a href="#contact">Contact Us</a> below.
+  </p>
+</header>
+
+<div class="page">
+
+  <nav class="toc" aria-label="Table of contents">
+    <h2>Topics</h2>
+    <ol>
+      <li><a href="#getting-started">Getting Started</a></li>
+      <li><a href="#security-privacy">Security &amp; Privacy</a></li>
+      <li><a href="#vaults">Vaults &amp; Organization</a></li>
+      <li><a href="#sharing">Secure Sharing</a></li>
+      <li><a href="#backups">Backups &amp; Data</a></li>
+      <li><a href="#troubleshooting">Troubleshooting</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ol>
+  </nav>
+
+  <main class="content">
+
+    <section class="policy-section" id="getting-started">
+      <h2>Getting Started</h2>
+      <p class="section-intro">The basics of setting up and using CipherPic.</p>
+
+      <details class="faq">
+        <summary><span class="icon">📱</span> Can I use CipherPic without the internet?</summary>
+        <div class="faq-body">
+          <p>Yes. Almost all vault features — creating vaults, storing photos and notes, PIN and biometric unlock, and organizing content — work completely offline. An internet connection is only needed for optional features such as app updates or, if enabled, server-relayed sharing.</p>
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary><span class="icon">📋</span> How do I import files?</summary>
+        <div class="faq-body">
+          <p>Tap the <strong>+</strong> button within a vault and follow the Import Security Wizard. You can import from your camera, photo gallery, device storage, or clipboard. Only the content you select is imported — CipherPic does not scan your device automatically.</p>
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary><span class="icon">🔐</span> How do I set up my vault PIN?</summary>
+        <div class="faq-body">
+          <p>You'll be prompted to create a PIN the first time you open CipherPic. We recommend choosing a PIN that isn't used anywhere else, and enabling biometric unlock (if your device supports it) for faster access without weakening your security.</p>
+          <p>We strongly recommend setting up a recovery method at this stage — see <a href="#forgot-pin">"I forgot my vault PIN"</a> below for why this matters.</p>
+        </div>
+      </details>
+
+    </section>
+
+    <section class="policy-section" id="security-privacy">
+      <h2>Security &amp; Privacy</h2>
+      <p class="section-intro">How CipherPic protects your information.</p>
+
+      <details class="faq">
+        <summary><span class="icon">🔒</span> Is my data stored on your servers?</summary>
+        <div class="faq-body">
+          <p>No. In Offline Mode, your encrypted vaults remain only on your device. CipherPic is built as a local-first application, so your protected content — photos, notes, passwords, and documents — is not routinely uploaded, copied, or monitored on our servers.</p>
+          <p>The only exception is if you choose to use an optional, clearly labeled server-assisted sharing feature — see <a href="#sharing">Secure Sharing</a> for details.</p>
+        </div>
+      </details>
+
+      <details class="faq" id="forgot-pin">
+        <summary><span class="icon">🔑</span> I forgot my vault PIN.</summary>
+        <div class="faq-body">
+          <p>Use your recovery method if you configured one, such as a recovery code or security questions. If you did not set up a recovery method, your encrypted data may not be recoverable — by us or anyone else.</p>
+          <p>This is a deliberate part of CipherPic's design: because we never receive or store your PIN or encryption keys, we have no way to unlock a vault on your behalf. We strongly recommend setting up a recovery method as soon as you create your vault.</p>
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary><span class="icon">🎭</span> What is Camouflage Mode?</summary>
+        <div class="faq-body">
+          <p>Camouflage Mode disguises CipherPic's app icon and interface as another everyday app — such as a calculator or weather app — for additional privacy on a shared or borrowed device. The vault itself remains protected by your PIN or biometric unlock underneath the disguise.</p>
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary><span class="icon">🚨</span> What is a Duress PIN?</summary>
+        <div class="faq-body">
+          <p>A Duress PIN is a special PIN you configure that opens a decoy vault instead of your real vault. If you're ever asked or pressured to unlock CipherPic, entering your Duress PIN shows a separate, non-sensitive vault while your real content stays hidden and protected.</p>
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary><span class="icon">📸</span> Does CipherPic protect against screenshots?</summary>
+        <div class="faq-body">
+          <p>CipherPic includes screenshot and screen-recording protection while viewing protected content, where supported by your device's operating system. This is intended as a deterrent rather than an absolute guarantee — no app can fully prevent capture by every possible method, such as a second device photographing the screen.</p>
+        </div>
+      </details>
+
+    </section>
+
+    <section class="policy-section" id="vaults">
+      <h2>Vaults &amp; Organization</h2>
+      <p class="section-intro">Working with multiple vaults and organizing your content.</p>
+
+      <details class="faq">
+        <summary><span class="icon">🗂️</span> Can I create more than one vault?</summary>
+        <div class="faq-body">
+          <p>Yes. CipherPic supports multiple independent vaults, each with its own protection. This is useful for separating personal and shared content, or for using Hidden Vault and Decoy Vault features alongside your primary vault.</p>
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary><span class="icon">🗑️</span> How does Secure Trash work?</summary>
+        <div class="faq-body">
+          <p>When you delete an item from a vault, it moves to Secure Trash rather than being removed immediately. It stays there until you permanently delete it, empty Secure Trash, or an automatic cleanup period you've configured expires. This gives you a safety net against accidental deletion.</p>
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary><span class="icon">📝</span> What can I store besides photos?</summary>
+        <div class="faq-body">
+          <p>In addition to photographs and images, CipherPic vaults can hold secure notes, passwords and account credentials, payment and membership cards, identity documents, and clipboard entries you choose to save.</p>
+        </div>
+      </details>
+
+    </section>
+
+    <section class="policy-section" id="sharing">
+      <h2>Secure Sharing</h2>
+      <p class="section-intro">Sending protected content to other people.</p>
+
+      <details class="faq">
+        <summary><span class="icon">📤</span> How does Secure Sharing work?</summary>
+        <div class="faq-body">
+          <p>Images are shared as encrypted <code>.cps</code> files, which only authorized CipherPic users can open. Depending on the sharing mode you choose, the file may be protected by a password you set locally, or — for server-assisted shares — by controls such as expiry and view limits enforced through our servers.</p>
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary><span class="icon">↩️</span> Can I revoke a share after sending it?</summary>
+        <div class="faq-body">
+          <p>It depends on the sharing mode. Locally shared files are password-protected, but once a copy is in someone else's hands, it can't be retrieved or revoked. Server-assisted shares support expiry, view limits, and revocation — but only against apps that respect those controls; we can't guarantee that a modified or offline app won't retain content.</p>
+          <p>For this reason, only share content with people you trust.</p>
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary><span class="icon">💧</span> What is watermarking, and does it stop screenshots?</summary>
+        <div class="faq-body">
+          <p>CipherPic can add a visible or embedded watermark to shared images to discourage unauthorized redistribution. Watermarking is a deterrent, not a guarantee — it can potentially be removed or degraded through image editing, resizing, or recompression.</p>
+        </div>
+      </details>
+
+    </section>
+
+    <section class="policy-section" id="backups">
+      <h2>Backups &amp; Data</h2>
+      <p class="section-intro">Keeping your information safe over time.</p>
+
+      <details class="faq">
+        <summary><span class="icon">💾</span> How do I back up my vault?</summary>
+        <div class="faq-body">
+          <p>Open Settings and select Backup to create an encrypted backup file of your vault contents. You choose where the backup is saved — such as local storage or a cloud provider of your choice. CipherPic does not automatically upload backups anywhere.</p>
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary><span class="icon">♻️</span> How do I restore a backup on a new device?</summary>
+        <div class="faq-body">
+          <p>Install CipherPic on your new device, then choose Restore from Backup and select your saved backup file. You'll need the PIN or password associated with that backup to decrypt it.</p>
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary><span class="icon">🧹</span> What happens if I uninstall the app?</summary>
+        <div class="faq-body">
+          <p>Uninstalling CipherPic removes the app and its locally stored data from your device, including your vaults, unless you've created a backup beforehand. If you want to keep access to your content, create and securely store a backup before uninstalling.</p>
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary><span class="icon">⚠️</span> What does Emergency Wipe do?</summary>
+        <div class="faq-body">
+          <p>Emergency Wipe permanently erases your vault contents from the device. It's designed for situations where you need to immediately remove sensitive data. This action cannot be undone unless you have a separate backup stored elsewhere.</p>
+        </div>
+      </details>
+
+    </section>
+
+    <section class="policy-section" id="troubleshooting">
+      <h2>Troubleshooting</h2>
+      <p class="section-intro">Common issues and how to resolve them.</p>
+
+      <details class="faq">
+        <summary><span class="icon">🔄</span> The app won't unlock with biometrics.</summary>
+        <div class="faq-body">
+          <p>Try the following:</p>
+          <ul>
+            <li>Confirm biometric authentication is enabled for CipherPic in your device settings.</li>
+            <li>Re-register your fingerprint or face in your device's system settings if it was recently changed.</li>
+            <li>Use your PIN as a fallback, then re-enable biometric unlock from within CipherPic's security settings.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary><span class="icon">🐞</span> I found a bug. How do I report it?</summary>
+        <div class="faq-body">
+          <p>Email us at <a href="mailto:cipherpicapp@gmail.com">cipherpicapp@gmail.com</a> with a description of the issue, steps to reproduce it, your device model, operating system version, and CipherPic version. Screenshots or recordings help but aren't required.</p>
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary><span class="icon">🛡️</span> I found a security vulnerability.</summary>
+        <div class="faq-body">
+          <p>We welcome responsible disclosure. Please email <a href="mailto:cipherpicapp@gmail.com">cipherpicapp@gmail.com</a> with details of the issue and steps to reproduce it, rather than disclosing it publicly, so we can investigate and address it.</p>
+        </div>
+      </details>
+
+    </section>
+
+    <section class="policy-section" id="contact">
+      <h2>Contact Us</h2>
+      <p>Need more help? We're happy to answer questions about your account, the app, or your privacy.</p>
+      <div class="contact-box">
+        <p><strong>Email:</strong> <a href="mailto:cipherpicapp@gmail.com">cipherpicapp@gmail.com</a></p>
+        <p><strong>Website:</strong> <a href="https://ayushlabx.github.io/cipherpic-docs/" target="_blank" rel="noopener noreferrer">ayushlabx.github.io/cipherpic-docs</a></p>
+        <p>For privacy-related requests, please include enough detail to help us understand and process your request. We may ask for additional information to verify your identity before responding to certain requests.</p>
+      </div>
+      <p style="margin-top:16px;">
+        See also our <a href="privacy.html">Privacy Policy</a> and
+        <a href="terms.html">Terms of Service</a>.
+      </p>
+      <a class="back-to-top" href="#getting-started">↑ Back to top</a>
+    </section>
+
+  </main>
+</div>
+
+<footer class="doc-footer">
+  <p>© 2026 CipherPic. This Help Center is provided for general guidance and may be updated as the app evolves.</p>
+</footer>
+
+</body>
+</html>
